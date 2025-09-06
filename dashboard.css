@@ -1,0 +1,206 @@
+/* تنظیم فونت و راست‌چین بودن کل صفحه */
+body {
+    font-family: 'Vazir', Tahoma, Arial, sans-serif;
+    direction: rtl;
+    margin: 0;
+    background: #f5f6fa;
+}
+
+/* دسترسی: لینک پرش */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.skip-link:focus {
+    left: 10px;
+    top: 10px;
+    width: auto;
+    height: auto;
+    background: #fff;
+    padding: 8px 12px;
+    z-index: 999;
+    border-radius: 4px;
+}
+
+/* استایل منوی کناری */
+.sidebar {
+    width: 220px;
+    background: #2f3640;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.25s ease;
+    z-index: 20;
+}
+.sidebar.hidden {
+    transform: translateX(100%);
+}
+
+.sidebar .sidebar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toggle-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* بقیه استایل‌ها ... */
+.sidebar h2 {
+    margin: 0 0 20px 0;
+    font-size: 22px;
+}
+
+/* منوی داخل سایدبار */
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar nav ul li {
+    margin-bottom: 15px;
+}
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.sidebar nav ul li a:hover, .sidebar nav ul li a[aria-current="page"] {
+    color: #00a8ff;
+}
+
+/* استایل خروج */
+.logout {
+    margin-top: 30px;
+    width: 100%;
+    padding: 10px 0;
+    background: #e84118;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* محتوای اصلی */
+.main-content {
+    margin-right: 240px;
+    padding: 30px;
+    transition: margin-right 0.25s ease;
+}
+
+/* در حالت موبایل */
+@media (max-width: 800px) {
+    .toggle-btn { display: inline-block; }
+    .sidebar { transform: translateX(100%); }
+    .sidebar[aria-expanded="true"] { transform: translateX(0); }
+    .sidebar.hidden { transform: translateX(100%); }
+    .main-content { margin-right: 0; padding: 20px; }
+}
+
+/* هدر ادمین */
+.admin-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+.admin-badge {
+    background: #00a8ff;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+/* آمار */
+.stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.stat {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 20px;
+    min-width: 140px;
+    text-align: center;
+}
+
+/* جدول‌ها */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+th, td {
+    padding: 12px 10px;
+    text-align: right;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+}
+
+/* badge وضعیت */
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 13px;
+}
+.status-active { background: #44bd32; }
+.status-inactive { background: #7f8fa6; }
+.status-pending { background: #f9ca24; color: #222; }
+
+/* ابزارها */
+.toolbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+}
+#searchUser {
+    width: 220px;
+    padding: 8px 12px;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    margin-bottom: 0;
+    font-size: 15px;
+    outline: none;
+}
+#searchUser:focus { border-color: #00a8ff; }
+
+.small {
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: #00a8ff;
+    color: #fff;
+    border: none;
+}
+
+/* حالت خالی جدول */
+.empty-row td {
+    text-align: center;
+    color: #666;
+    padding: 18px;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>داشبورد ادمین</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">پرش به محتوا</a>
+    <aside class="sidebar" id="sidebar" aria-label="منوی ناوبری">
+        <div class="sidebar-top">
+            <h2>داشبورد</h2>
+            <button id="toggleSidebar" class="toggle-btn" aria-expanded="true" aria-controls="sidebar">☰</button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" aria-current="page">خانه</a></li>
+                <li><a href="#users">کاربران</a></li>
+                <li><a href="#reports">گزارشات</a></li>
+                <li><a href="#settings">تنظیمات</a></li>
+            </ul>
+        </nav>
+        <button id="logoutBtn" class="logout" aria-label="خروج">خروج</button>
+    </aside>
+
+    <main id="main" class="main-content" role="main">
+        <header class="admin-header">
+            <span id="adminName" class="admin-badge" aria-hidden="false"></span>
+            <h1 id="welcome"></h1>
+        </header>
+
+        <section aria-labelledby="stats-title">
+            <h3 id="stats-title">آمار کلی</h3>
+            <div class="stats">
+                <div class="stat">
+                    <span>تعداد کاربران</span>
+                    <strong id="userCount">0</strong>
+                </div>
+                <div class="stat">
+                    <span>گزارشات امروز</span>
+                    <strong id="reportCount">0</strong>
+                </div>
+            </div>
+        </section>
+
+        <section id="users" aria-labelledby="users-title">
+            <h3 id="users-title">کاربران</h3>
+            <div class="toolbar">
+                <input type="text" id="searchUser" placeholder="جستجوی کاربر..." aria-label="جستجوی کاربر">
+                <button id="exportUsers" class="small">خروجی CSV</button>
+            </div>
+            <table id="userTable" aria-describedby="users-title">
+                <thead>
+                    <tr>
+                        <th>نام</th>
+                        <th>ایمیل</th>
+                        <th>وضعیت</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ردیف‌ها توسط JS اضافه می‌شوند -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="reports" aria-labelledby="reports-title">
+            <h3 id="reports-title">گزارشات</h3>
+            <table id="reportTable" aria-describedby="reports-title">
+                <thead>
+                    <tr>
+                        <th>عنوان</th>
+                        <th>تاریخ</th>
+                        <th>وضعیت</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ردیف‌ها توسط JS اضافه می‌شوند -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
